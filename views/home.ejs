@@ -1,0 +1,21 @@
+
+<%- include("partials/header"); -%>
+
+    <h1>Home</h1>
+    <h3> <%= startingContent %> <br/> <br/> </h3>
+    <a href="./compose" class="btn btn-primary" >Compose a Blog Post</a>
+    <h2><br/>Posts by users:<br/></h2>
+  <%  posts.forEach(function(post){ %>
+
+    <h3><%=post.title%></h3>
+    <h5> <i> Posted by <%=post.author%> on <%=post.createdAt%>  </i></h5>
+    <p>
+    <%=post.content.substring(0, 70) + " ..."%>
+    <a href="/posts/<%=post._id%>">Read More</a>
+    </p>
+
+
+    <% }) %>
+
+
+<%- include("partials/footer"); -%>
